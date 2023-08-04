@@ -1,0 +1,20 @@
+#calculator {
+    border: solid black 2px;
+}
+
+#operator-number-container {
+    border: solid silver 2px;
+    display: flex;
+}
+
+#number-grid {
+    border: solid turquoise 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#operator-grid {
+    border: solid seagreen 2px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
