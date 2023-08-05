@@ -1,20 +1,38 @@
+* {
+    margin: 0;
+}
+
 #calculator {
+    width: 400px;
+    height: 450px;
     border: solid black 2px;
+    display: flex;
+    flex-flow: column;
+}
+
+#display-container {
+    border: solid black 2px;
+    margin: 4px;
+    padding: 16px 4px;
 }
 
 #operator-number-container {
+    margin: 4px;
     border: solid silver 2px;
+    flex: 1 1 auto;
     display: flex;
 }
 
 #number-grid {
     border: solid turquoise 2px;
+    flex: 1 1 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 #operator-grid {
     border: solid seagreen 2px;
+    flex: 1 1 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
