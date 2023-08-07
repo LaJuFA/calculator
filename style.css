@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
 * {
     margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #calculator {
@@ -16,23 +19,36 @@
     padding: 16px 4px;
 }
 
-#operator-number-container {
+#calculator-inside {
+    border: solid black 2px;
     margin: 4px;
-    border: solid silver 2px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+#other-buttons {
+    display: grid;
+    grid-template-columns: 1.32fr 1fr;
+}
+
+#operator-number-container {
     flex: 1 1 auto;
     display: flex;
 }
 
 #number-grid {
-    border: solid turquoise 2px;
     flex: 1 1 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
+#zero {
+    grid-column: auto / span 2;
+}
+
 #operator-grid {
-    border: solid seagreen 2px;
     flex: 1 1 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
