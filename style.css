@@ -5,31 +5,71 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#la-dora {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 32px 0;
+}
+
 #calculator {
     width: 400px;
     height: 450px;
+    background-color: rgb(166, 236, 213);
     border: solid black 2px;
+    border-radius: 6px;
     display: flex;
     flex-flow: column;
 }
 
 #display-container {
     border: solid black 2px;
+    border-radius: 6px;
     margin: 4px;
     padding: 16px 4px;
+    background-color: rgb(225, 255, 237);
+}
+
+h2 {
+    color: rgb(125, 145, 133);
 }
 
 #calculator-inside {
+    background-color: white;
     border: solid black 2px;
+    border-radius: 4px;
     margin: 4px;
     flex: 1 1 auto;
     display: flex;
     flex-flow: column;
 }
 
+button {
+    opacity: 0.7;
+    transition: 0.3s;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+button:hover {opacity: 1}
+
 #other-buttons {
     display: grid;
-    grid-template-columns: 1.32fr 1fr;
+    grid-template-columns: 1.165fr 1fr;
+}
+
+#delete-button {
+    background-color: rgb(105, 146, 119);
+    border: 2px solid rgb(83, 114, 96);
+}
+
+#ac-button {
+    background-color: rgb(131, 180, 174);
+    border: 2px solid rgb(112, 153, 148);
 }
 
 #operator-number-container {
@@ -41,6 +81,11 @@
     flex: 1 1 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.number-button {
+    background-color: rgb(197, 231, 207);
+    border: 2px solid rgb(150, 179, 162);
 }
 
 #zero {

@@ -1,6 +1,8 @@
 function operate(a, b, operator) {
     a = parseInt(a);
     b = parseInt(b);
+
+
     let result;
     switch (operator) {
         case "+":
@@ -26,6 +28,8 @@ const divide = (a, b) => Math.round(a / b);
 
 const calculatorDisplay = document.getElementById('display');
 const equalsButton = document.getElementById('equals');
+const deleteButton = document.getElementById('delete-button');
+const zeroButton = document.getElementById('zero');
 
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
@@ -36,6 +40,7 @@ let currentNumber = "";
 
 numberButtons.forEach(currentButton => {
     currentButton.addEventListener("click", () => {
+        zeroButton.disabled = false;
         currentNumber += currentButton.textContent;
         display += currentButton.textContent;
         calculatorDisplay.textContent = display;
@@ -46,6 +51,9 @@ operatorButtons.forEach(currentButton => {
     currentButton.addEventListener("click", () => {
         if (currentNumber) {
             calculation.push(currentNumber, currentButton.textContent);
+            if (currentButton.textContent === "/") {
+                zeroButton.disabled = true;
+            }
             display = calculation.join("");
             calculatorDisplay.textContent = display;
             currentNumber = "";
@@ -66,4 +74,11 @@ equalsButton.addEventListener("click", () => {
         display = currentNumber;
         calculatorDisplay.textContent = display;
     }
+});
+
+deleteButton.addEventListener("click", () => {
+    calculation.splice(0, 3);
+    display = "";
+    currentNumber = ""; 
+    calculatorDisplay.textContent = "Display";
 });
