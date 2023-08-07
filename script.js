@@ -29,10 +29,18 @@ const divide = (a, b) => Math.round(a / b);
 const calculatorDisplay = document.getElementById('display');
 const equalsButton = document.getElementById('equals');
 const deleteButton = document.getElementById('delete-button');
+const acButton = document.getElementById('ac-button');
 const zeroButton = document.getElementById('zero');
+const doraContainer = document.getElementById('la-dora');
+const dora = document.getElementById('calculator');
 
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
+
+const juas = new Audio("juas.mp3")
+
+const acImage = document.createElement('img');
+acImage.src = "AC.jpg";
 
 let calculation = [];
 let display = "";
@@ -81,4 +89,10 @@ deleteButton.addEventListener("click", () => {
     display = "";
     currentNumber = ""; 
     calculatorDisplay.textContent = "Display";
+});
+
+acButton.addEventListener("click", () => {
+    doraContainer.removeChild(dora);
+    doraContainer.appendChild(acImage);
+    juas.play();
 });
